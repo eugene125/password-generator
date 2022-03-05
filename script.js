@@ -66,7 +66,7 @@ function randomPassword() {
   password = "";
 
   for (let index = 0; index < passwordCharacterCount; index++) {
-    var randomSelector = Math.floor(Math.random()* (mergedArray.length-1))
+    var randomSelector = Math.floor(Math.random()* (mergedArray.length))
     password += mergedArray[randomSelector];
   }
   return password;
