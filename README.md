@@ -15,4 +15,4 @@ My objective for this assignment was to create a randon password generator. I ac
 
 ## Final Page Link
 
-[]
+[This link will open up my password generator](https://eugene125.github.io/password-generator/)
