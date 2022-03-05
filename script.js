@@ -18,39 +18,39 @@ var mergedArray = [];
 // This function creates a framework for the random password generator
 function userInteraction() {
   function userCharacterCount () {
-    passwordCharacterCount = parseInt(prompt("Choose a value between 8 and 128 for your password"))
+    passwordCharacterCount = parseInt(prompt("Choose a value between 8 and 128 for your password"));
 
     while (passwordCharacterCount < 8 || passwordCharacterCount > 128) {
-      passwordCharacterCount = parseInt (prompt("Invalid Number: Please choose between 8 and 128"))
+      passwordCharacterCount = parseInt (prompt("Invalid Number: Please choose between 8 and 128"));
     }
   }
   function uppercase() {
-    allowUppercase = confirm("Would you like to add uppercase characters?")
+    allowUppercase = confirm("Would you like to add uppercase characters?");
 
-    // Within each function, I have an array pushing its content into an empty array. I utilized the ellipses was added to make sure the original array is not modified in any way during the push.
+    // Within each function, I have an array pushing its content into an empty array. I utilized the ellipses which was added to make sure the data in the original array is not modified in any way during the push.
     if (allowUppercase === true) {
-      mergedArray.push (...uppercaseChars)
+      mergedArray.push (...uppercaseChars);
     }
   }
   function lowercase() {
-    allowLowercase = confirm("Would you like to add lowercase characters?")
+    allowLowercase = confirm("Would you like to add lowercase characters?");
 
     if (allowLowercase === true) {
-      mergedArray.push (...lowercaseChars)
+      mergedArray.push (...lowercaseChars);
     }
   }
   function numbers() {
-    allowNumbers = confirm("Would you like to add numbers?")
+    allowNumbers = confirm("Would you like to add numbers?");
 
     if (allowNumbers === true) {
-      mergedArray.push (...number)
+      mergedArray.push (...number);
     }
   }
   function specials() {
-    allowSpecials = confirm("Would you like to add special characters?")
+    allowSpecials = confirm("Would you like to add special characters?");
 
     if (allowSpecials === true) {
-      mergedArray.push (...specialCharacters)
+      mergedArray.push (...specialCharacters);
     }
   }
 userCharacterCount();
@@ -60,6 +60,7 @@ numbers();
 specials();
 }
 
+// This function is the actual random number generator. The function pulls the results from the userInteraction function and runs them through the generator.
 function randomPassword() {
   userInteraction();
   password = "";
@@ -74,9 +75,10 @@ function randomPassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// This function is displaying the password by assigning the result to the #password ID in the HTML
 function writePassword() {
   var password = randomPassword();
-  var passwordText = document.querySelector("#password")
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
