@@ -1,17 +1,21 @@
+// Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Variables assigned by instructor
 var allowUppercase;
 var allowLowercase;
 var allowNumbers;
 var allowSpecials;
 var passwordCharacterCount;
 
+// Setting up arrays with valid characters
 var uppercaseChars = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ];
 var lowercaseChars = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "|", "\\", "}", "{", "]", "[", '"', "'", ":", ";", "/", "?", ".", ">", ",", "<", "`", "~"];
 var mergedArray = [];
 
+// This function creates a framework for the random password generator
 function userInteraction() {
   function userCharacterCount () {
     passwordCharacterCount = parseInt(prompt("Choose a value between 8 and 128 for your password"))
@@ -23,6 +27,7 @@ function userInteraction() {
   function uppercase() {
     allowUppercase = confirm("Would you like to add uppercase characters?")
 
+    // Within each function, I have an array pushing its content into an empty array. I utilized the ellipses was added to make sure the original array is not modified in any way during the push.
     if (allowUppercase === true) {
       mergedArray.push (...uppercaseChars)
     }
@@ -53,13 +58,12 @@ uppercase();
 lowercase();
 numbers();
 specials();
-
 }
 
 function randomPassword() {
   userInteraction();
-  console.log(mergedArray);
   password = "";
+
   for (let index = 0; index < passwordCharacterCount; index++) {
     var randomSelector = Math.floor(Math.random()* (mergedArray.length-1))
     password += mergedArray[randomSelector];
@@ -67,11 +71,11 @@ function randomPassword() {
   return password;
 }
 
+// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 function writePassword() {
   var password = randomPassword();
-  console.log(password)
   var passwordText = document.querySelector("#password")
 
   passwordText.value = password;
