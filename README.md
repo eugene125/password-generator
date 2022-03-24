@@ -1,18 +1,31 @@
 # password-generator
 
-##
-My objective for this assignment was to create a randon password generator. I accomplised this by executing the following steps:
+## Objective
 
-* Creating seperate arrays for each character type the user may want included in their password and an empty array.
-* Setting up a function as a framework for the random password generator.
-    * Nested functions within the framework that prompts users to enter a password character length and what types of characters they want included.
-    * If the user wants a specific character type in their password, the function is set to true and the contents of the array are pushed into the empty array.
-* Once the user has inputted their password length and has chosen what character types they want included, the random number generator pulls the new array that was pushed into and randomly generates a password based on that array.
-* Finally, the randomly generated password is displayed to the user.
+``` 
+
+My objective for this assignment was to generate a random password based on a users preference. The following tasks is how I accomplished that objective:
+* Setting up a function that contains nested functions. The purpose of the overarching function is to execute each nested function with a single call.
+* Within the overarching function were seperate functions that would prompt the user to choose certain character types. If chosen, the corresponding character type would be pushed into an empty array.
+* The new array has a random number generator that chooses certain index values which are then displayed as the users random password. 
+
+```
+
+---
 
 ## Final Page Screenshot
-![The appearance of this website has not changed from the original](./assets/random_password_generator.png)
+![A screenshot of my website as soon as you enter](./assets/random_password_generator.png)
+![A screenshot of the displayed random password](./assets/displayed_password.png)
 
 ## Final Page Link
+- [Deployed webpage](https://eugene125.github.io/password-generator/)
+- [GitHub Respository](https://github.com/eugene125/password-generator)
 
-[This link will open up my password generator](https://eugene125.github.io/password-generator/)
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+
+## License
+
+This code is licensed under the MIT License
